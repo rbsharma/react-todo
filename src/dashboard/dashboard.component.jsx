@@ -11,10 +11,24 @@ class DashboardComponent extends Component {
     }
 
     AddNewTask(newTaskText) {
-        let newTask = { id: this.state.tasks.length, description: newTaskText };
+        let newTask = { id: this.state.tasks.length, description: newTaskText, completed: false };
         let _tasks = this.state.tasks;
         _tasks.push(newTask);
-        
+
+        this.setState({
+            tasks: _tasks
+        });
+    }
+
+    ToggleTaskCompletion(_clickedTask) {
+        let _tasks = this.state.tasks;
+        for (let i = 0; i < _tasks.length; i++) {
+            if (_tasks[i].id == _clickedTask.id) {
+                _tasks[i].completed = !_tasks[i].completed;
+                break;
+            }
+        }
+
         this.setState({
             tasks: _tasks
         });
@@ -24,10 +38,13 @@ class DashboardComponent extends Component {
         return (
             <div className="centerAlign">
                 <div className="offset-sm-1 col-sm-10 offset-md-4 col-md-8">
-                    <AddTask GetNewTaskObject={this.AddNewTask.bind(this)} />
+                    <AddTask
+                        GetNewTaskObject={this.AddNewTask.bind(this)} />
                 </div>
                 <div>
-                    {<Tasks items={this.state.tasks} />}
+                    {<Tasks
+                        GetClickedTask={this.ToggleTaskCompletion.bind(this)}
+                        items={this.state.tasks} />}
                 </div>
             </div>
         );

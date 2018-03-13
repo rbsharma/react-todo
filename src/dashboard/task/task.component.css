@@ -7,7 +7,12 @@
     text-align: left;
     word-break: break-all;
     background-color: white;
+    cursor: pointer;
 }
+/* .task-item:hover{
+    background-color:#e4e4e4;
+    border:1px solid #e4e4e4;
+} */
 
 .task-description{
     font-size: 1.5em;
@@ -33,4 +38,6 @@
 
 .task-completed{
     opacity: 0.8;
+    background-color:#b5e0b5;
+    border:1px solid #b5e0b5;
 }
