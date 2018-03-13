@@ -1,5 +1,13 @@
 # react_redux_starterkit
 
-This repository contains a basic starter kit for react-redux environment with Webpack as module bundler.
+A Basic todo list created with react.js
 
-Testing and some other modules are yet to be integrated.
+#Features
+1. Add tasks.
+
+#Roadmap
+1. Delete Tasks
+2. Filter Tasks
+3. Add Redux 
+4. Task completed/active status
+5. Percentage of tasks completed.
