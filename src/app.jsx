@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
+import './app.css';
 import Dashboard from './dashboard/dashboard.component';
 
 class App extends React.Component {
