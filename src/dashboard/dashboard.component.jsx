@@ -13,11 +13,12 @@ class DashboardComponent extends Component {
     AddNewTask(newTaskText) {
         let newTask = { id: this.state.tasks.length, description: newTaskText, completed: false };
         let _tasks = this.state.tasks;
-        _tasks.push(newTask);
+        _tasks.unshift(newTask);
 
         this.setState({
             tasks: _tasks
         });
+        console.log(this.state.tasks);
     }
 
     ToggleTaskCompletion(_clickedTask) {
