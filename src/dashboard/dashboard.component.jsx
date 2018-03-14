@@ -34,6 +34,19 @@ class DashboardComponent extends Component {
         });
     }
 
+    DeleteTask(_clickedTask) {
+        let _tasks = this.state.tasks;
+        for (let i = 0; i < _tasks.length; i++) {
+            if (_tasks[i].id == _clickedTask.id) {
+                _tasks.splice(i, 1);
+                break;
+            }
+        }
+
+        this.setState({
+            tasks: _tasks
+        })
+    }
     render() {
         return (
             <div className="centerAlign">
@@ -44,6 +57,7 @@ class DashboardComponent extends Component {
                 <div>
                     {<Tasks
                         GetClickedTask={this.ToggleTaskCompletion.bind(this)}
+                        GetTaskToDelete={this.DeleteTask.bind(this)}
                         items={this.state.tasks} />}
                 </div>
             </div>

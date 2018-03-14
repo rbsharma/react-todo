@@ -13,6 +13,10 @@ class TaskComponent extends Component {
         this.props.GetClickedTask(_clickedTask);
     }
 
+    DeleteTask(_clickedTask) {
+        this.props.GetTaskToDelete(_clickedTask);
+    }
+
     render() {
         return (
             <div>
@@ -23,6 +27,10 @@ class TaskComponent extends Component {
                             className={"task-item " + (task.completed ? 'task-completed' : 'task-active')}
                             key={task.id}>
                             <span className="task-description">{task.description}</span>
+                            <input
+                                onClick={() => this.DeleteTask(task)}
+                                title="Delete" type="button"
+                                className="btn btn-danger float-right" value="-" />
                         </div>
                     )
                 }

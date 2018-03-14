@@ -37,7 +37,7 @@
 }
 
 .task-completed{
-    opacity: 0.8;
+    opacity: 0.5;
     background-color:#b5e0b5;
     border:1px solid #b5e0b5;
 }
